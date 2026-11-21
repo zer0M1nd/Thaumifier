@@ -1,4 +1,4 @@
-# Thaumonomicon Style Guide for Thaumcraft 4
+# Thaumifier
 
 [简体中文 README](README.zh-CN.md)
 

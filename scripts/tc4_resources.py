@@ -37,7 +37,7 @@ def data_directory():
     else:
         base = Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local/share")
     checkout_id = hashlib.sha256(os.fsencode(os.path.normcase(str(checkout)))).hexdigest()[:24]
-    directory = (base / "thaumonomicon-style-zh" / checkout_id).resolve()
+    directory = (base / "thaumifier" / checkout_id).resolve()
     if checkout == directory or checkout in directory.parents:
         raise ValueError("用户数据目录位于本仓库内，请将其设到仓库外再使用资源。")
     return directory
@@ -88,7 +88,7 @@ def copy_and_hash(source, target=None):
 
 def download_to(path):
     if getattr(http.client, "HTTPSConnection", None) is not None:
-        request = Request(DOWNLOAD_URL, headers={"User-Agent": "thaumonomicon-style-zh/1"})
+        request = Request(DOWNLOAD_URL, headers={"User-Agent": "Thaumifier/1"})
         with urlopen(request, timeout=45) as source, path.open("wb") as target:
             return copy_and_hash(source, target)
 

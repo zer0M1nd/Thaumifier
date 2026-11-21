@@ -1,4 +1,4 @@
-# 神秘时代 4 魔导手册风格指引
+# Thaumifier
 
 [English README](README.md)
 
