@@ -1,0 +1,28 @@
+{
+ "_comment": "批量重写的工作包示例。每个模组一份，由盘点脚本生成；action 取值：rewrite（必须改写）、optional（可选，多为标题）、keep（禁止改动：原作译文或旧版文本）、mirror（由其他模组负责，同步相同文本）。legacy=true 表示旧式页（用 <BR>），false 表示原生组件页（用 \\n）。",
+ "module": "Addons/ThaumicOmniverse",
+ "entries": [
+  {
+   "research": "thaumicomniverse:ARCANE_MOTOR",
+   "category": "THAUMICOMNIVERSE",
+   "parents": ["thaumicomniverse:THAUMIC_CASING"],
+   "items": [
+    {"kind": "title", "key": "tc.research_name.thaumicomniverse:ARCANE_MOTOR", "zh": "奥术马达", "en_port": "Arcane Motor", "action": "optional", "why": "与单个物品强相关的标题一般保持", "files": ["Addons/ThaumicOmniverse/src/main/resources/assets/thaumicomniverse/lang/zh_cn.json"]},
+    {"kind": "subtitle", "key": "tc.research_text.thaumicomniverse:ARCANE_MOTOR", "zh": "奥术马达", "en_port": "Arcane Motor", "action": "rewrite", "why": "", "files": ["…/zh_cn.json"]},
+    {"kind": "page", "key": "omniverse.page.arcane_motor", "zh": "被动提供 256 su，转速 16 rpm。……", "en_port": "Generates 256 su at 16 rpm passively. …", "legacy": true, "type": "TEXT", "action": "rewrite", "why": "", "files": ["…/zh_cn.json"]},
+    {"kind": "recipe_or_other_page", "type": "ARCANE_CRAFTING"}
+   ]
+  },
+  {
+   "research": "thaumicomniverse:BIG_PEARL",
+   "items": [
+    {"kind": "page", "key": "omniverse.page.extremely_primordial_pearl", "zh": "通过奥术注魔强化元始珍珠……", "legacy": true, "action": "rewrite",
+     "why": "神秘万象负责；神秘时代：未来的语言文件中也有同键旧副本（内容略有不同），交付时两处同步为同一文本",
+     "zh_other_copy": {"ThaumicFutures": "将八枚元始珍珠的力量融合，得到极始珍珠。……"}}
+   ]
+  }
+ ],
+ "extra": [
+  {"key": "tc.research_name.thaumicomniverse:MAGIC_BEES", "zh": "神秘养蜂", "action": "mirror", "why": "由 Addons/ThaumicFutures 负责改写，本模组同步相同文本"}
+ ]
+}
